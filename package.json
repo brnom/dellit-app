@@ -6,6 +6,10 @@
     "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
-    "nuxt3": "latest"
+    "nuxt3": "latest",
+    "sass": "^1.45.0"
+  },
+  "dependencies": {
+    "nuxt-svg-loader": "^1.2.0"
   }
 }
