@@ -1,7 +1,8 @@
 import { defineNuxtConfig } from 'nuxt3'
 import fs from 'fs'
+import svgLoader from 'vite-svg-loader'
 
-/* TODO: remove this when vite supports style resources */
+/* TODO: fix on vite style-resources support */
 let sassVars = ''
 try {
   sassVars = fs.readFileSync('./assets/variables.scss', 'utf8')
@@ -12,9 +13,10 @@ try {
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
-    // buildModules: [
-    //     '@nuxtjs/style-resources'
-    // ],
+    alias: {
+        '@': '~',
+        '@icons': '~/public/icons',
+    },
 
     css: [
         '@/assets/main.scss',
@@ -22,7 +24,9 @@ export default defineNuxtConfig({
     ],
 
     meta: {
+        title: 'Dellit Doces',
         link: [
+            { rel: 'icon', href: '/favicon.png', type: 'image/png' },
             { rel: "preconnect", href: "https://fonts.googleapis.com" },
             { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: true },
             { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap" },
@@ -31,20 +35,25 @@ export default defineNuxtConfig({
     },
 
     modules: [
-        'nuxt-svg-loader',
+        'vite-svg-loader',
     ],
 
     ssr: false,
+
+    typescript: {
+        strict: true,
+    },
 
     /* TODO: fix sass variables import */
     vite: {
         css: {
             preprocessorOptions: {
                 scss: {
-                    sourceMap: true,
+                    // sourceMap: true,
                     additionalData: sassVars,
                 },
             },
         },
+        plugins: [svgLoader()],
     },
 })

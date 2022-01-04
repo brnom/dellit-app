@@ -1,4 +1,9 @@
-<script setup>
+<script lang="ts" setup>
+import { PropType } from "vue"
+
+const _props = defineProps({
+    list: { type: Array as PropType<string[]>, default: () => ([]) },
+})
 </script>
 
 <template>
@@ -8,13 +13,27 @@
         </div>
 
         <div class="sidebar-list">
-            list here
+            <div
+                v-for="item in _props.list"
+                :key="item"
+                class="sidebar-list-item"
+            >
+                {{ item }}
+            </div>
         </div>
 
         <footer>
-            <Icon name="whatsapp" />
-            <Icon name="instagram" />
-            <Icon name="facebook" />
+            <div class="message">
+                Gostou?
+                <br>
+                Peça agora!
+            </div>
+
+            <div class="icons">
+                <Icon name="whatsapp" />
+                <Icon name="instagram" />
+                <Icon name="facebook" />
+            </div>
         </footer>
     </div>
 </template>
@@ -34,18 +53,43 @@
 
     &-logo {
         img {
-            width: 100%;
+            width: calc($sidebar-width - 2vw);
             margin: 20px auto;
             object-fit: contain;
         }
     }
 
-    footer {
-        margin-top: auto;
+    &-list {
+        font-size: 20px;
+        font-weight: 500;
 
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        &-item {
+            border: 1px solid red;
+            padding: 6px;
+            padding-left: 30px;
+            margin-bottom: 20px;
+            cursor: pointer;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    footer {
+        margin: auto 20px 20px;
+
+        .message {
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .icons {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
     }
 }
 </style>

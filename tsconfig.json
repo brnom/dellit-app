@@ -1,4 +1,23 @@
 {
   // https://v3.nuxtjs.org/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json"
+    "extends": "./.nuxt/tsconfig.json",
+    "compilerOptions": {
+        "rootDir": "./",
+        "baseUrl": ".",
+        /* needs to be same as nuxt.config `alias` */
+        "paths": {
+            "~/*": [
+                "./*"
+            ],
+            "@/*": [
+                "./*"
+            ],
+            "@icons/*": [
+                "./static/icons/*"
+            ],
+        }
+    },
+    "exclude": [
+        "node_modules",
+    ]
 }

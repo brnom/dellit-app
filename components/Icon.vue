@@ -1,27 +1,43 @@
-<script setup>
-import WhatsappIcon from '@/icons/whatsapp.svg'
+<script lang="ts" setup>
+import SearchIcon from '@icons/search.svg?component'
+import WhatsappIcon from '@icons/whatsapp.svg?component'
+import InstagramIcon from '@icons/instagram.svg?component'
+import FacebookIcon from '@icons/facebook.svg?component'
 
-const props = defineProps({
-    name: { type: String, required: true }
-})
-
-const icons = {
-    whatsapp: WhatsappIcon
+const icons: Record<string, any> = {
+    search: SearchIcon,
+    whatsapp: WhatsappIcon,
+    instagram: InstagramIcon,
+    facebook: FacebookIcon
 }
 
-console.log({ icons, ...props })
+const props = defineProps({
+    name: { type: String, required: true },
+    size: { type: Number, default: 30 },
+})
 
+const style = computed(() => ({
+    width: `${props.size}px`,
+    height: `${props.size}px`
+}))
+
+const icon = computed(() =>
+    props.name in icons
+        ? icons[props.name]
+        : undefined
+)
 </script>
 
 <template>
     <div class="icon">
-        teste: 
-        <component :is="undefined" />   
+        <component :is="icon" :style="style" />   
     </div>
 </template>
 
 <style lang="scss" scoped>
 .icon {
-    border: 1px solid red;
+    svg {
+        fill: $brown;
+    }
 }
 </style>

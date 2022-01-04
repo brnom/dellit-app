@@ -5,11 +5,10 @@
     "build": "nuxi build",
     "start": "node .output/server/index.mjs"
   },
+  "dependencies": {},
   "devDependencies": {
     "nuxt3": "latest",
-    "sass": "^1.45.0"
-  },
-  "dependencies": {
-    "nuxt-svg-loader": "^1.2.0"
+    "sass": "^1.45.0",
+    "vite-svg-loader": "^3.1.1"
   }
 }
