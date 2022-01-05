@@ -2,12 +2,19 @@
  * Sizes
  */
 $sidebar-width: 230px;
-$height: 32px;
+$height: 36px;
 
+/**
+ * Scroll 
+ */
+$scroll-tracker: #ccc;
+$scroll-background: transparent;
 
 /**
  * Colors
  */
+$white: #FFF;
+
 $brown: #462321;
 $brown-light: #7B4A42;
 $brown-dark: #2D0E0E;

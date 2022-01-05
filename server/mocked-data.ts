@@ -7,7 +7,7 @@ export const data = [
         products: [
             {
                 name: 'Bolo de Cenoura',
-                description: '',
+                description: 'lorem ipsum',
                 price: 'R$ 0,00'
             }
         ]

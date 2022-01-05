@@ -12,13 +12,12 @@ const search = ref('')
 function onInput (e: any) {
     emit('input', e.target.value)
 }
-
 </script>
 
 <template>
     <div class="search">
         <div class="search-icon">
-            <Icon name="search" :size="16" />
+            <Icon name="search" :size="14" />
         </div>
 
         <input
@@ -32,14 +31,15 @@ function onInput (e: any) {
 
 <style lang="scss" scoped>
 .search {
+    width: 300px;
     height: $height;
-    padding: 0 20px;
+    padding: 6px 20px;
 
     display: flex;
     align-items: center;
 
     border: 1px solid $brown-dark;
-    border-radius: calc($height / 2);
+    border-radius: 10px;
     color: $brown-dark;
 
     &-icon {
@@ -49,7 +49,7 @@ function onInput (e: any) {
     input {
         border: none;
         outline: none;
-        height: 100%;
+        width: 100%;
         padding: 4px;
 
         &::placeholder {

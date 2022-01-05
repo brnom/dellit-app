@@ -1,25 +1,31 @@
 <script lang="ts" setup>
 import { PropType } from "vue"
+import { slugify } from '@/helpers/utils'
 
 const _props = defineProps({
     list: { type: Array as PropType<string[]>, default: () => ([]) },
 })
+
+const getCategoryRoute = (category: string) =>
+    `/categoria/${slugify(category)}`
+
 </script>
 
 <template>
     <div class="sidebar">
-        <div class="sidebar-logo">
+        <NuxtLink class="sidebar-logo" to="/">
             <img src="/logo.png" alt="Dellit Logo">
-        </div>
+        </NuxtLink>
 
         <div class="sidebar-list">
-            <div
+            <NuxtLink
                 v-for="item in _props.list"
                 :key="item"
+                :to="getCategoryRoute(item)"
                 class="sidebar-list-item"
             >
                 {{ item }}
-            </div>
+            </NuxtLink>
         </div>
 
         <footer>
@@ -52,8 +58,11 @@ const _props = defineProps({
     border-right: 1px solid $brown;
 
     &-logo {
+        padding: 10px;
+        cursor: pointer;
+
         img {
-            width: calc($sidebar-width - 2vw);
+            width: 100%;
             margin: 20px auto;
             object-fit: contain;
         }
@@ -64,10 +73,10 @@ const _props = defineProps({
         font-weight: 500;
 
         &-item {
-            border: 1px solid red;
+            display: block;
             padding: 6px;
             padding-left: 30px;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
             cursor: pointer;
 
             &:last-child {

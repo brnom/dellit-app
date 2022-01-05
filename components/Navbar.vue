@@ -1,0 +1,1 @@
+/* maybe using a navbar instead of Sidebar, with categories on a vertical list? */

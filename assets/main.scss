@@ -1,14 +1,43 @@
 * {
     margin: 0;
     box-sizing: border-box;
+
+    /** Firefox Scroll */
+    scrollbar-width: thin;
+    scrollbar-color: $scroll-tracker $scroll-background;
 }
+
+/**
+ * https://www.digitalocean.com/community/tutorials/css-scrollbars-pt
+ */
+*::-webkit-scrollbar {
+    width: 8px;
+} 
+*::-webkit-scrollbar-track {
+    background: $scroll-background;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: $scroll-tracker;
+    border-radius: 20px;
+    border: 3px solid $scroll-background;
+}
+
 
 body {
     font-family: 'Barlow', sans-serif;
 }
 
-h1 {
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.page-title {
     font-size: 3.5rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 600;
 }
