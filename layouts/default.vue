@@ -1,29 +1,35 @@
 <script lang="ts" setup>
 import { data } from '@/server/mocked-data'
+import { slugify } from '@/helpers/utils'
 
-const categories = computed(() => data.map(({ category }) => category))
-
+const categories = computed(() =>
+    data.map(({ category }) => ({
+        name: category,
+        path: `/categoria/${slugify(category)}`,
+    }))
+)
 </script>
 
 <template>
-    <div class="main">
-        <Sidebar :list="categories" />
+    <div class="ld">
+        <Navbar :categories="categories" />
 
-        <div class="main-pages">
+        <div class="ld-pages">
             <slot />
         </div>
-
     </div>
 </template>
 
 <style lang="scss" scoped>
-.main {
+.ld {
     display: flex;
+    flex-direction: column;
 
     &-pages {
+        margin-top: $navbar-height;
         width: 100%;
-        margin-left: $sidebar-width;
-        padding: 40px;
+        background: #efefef;
+        padding: 30px 40px;
     }
 }
 </style>

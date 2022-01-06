@@ -3,6 +3,7 @@ const _props = defineProps({
     name: { type: String, required: true },
     description: { type: String, default: '' },
     price: { type: String, default: '' },
+    imageUrl: { type: String, default: '' },
 })
 </script>
 
@@ -26,7 +27,7 @@ const _props = defineProps({
         </div>
 
         <div class="p-card-images">
-            nice img
+            <img :src="_props.imageUrl" :alt="`${_props.name} Image`">
         </div>
     </div>
 </template>
@@ -35,9 +36,9 @@ const _props = defineProps({
 .p-card {
     padding: 20px;
     background: $white;
-    border-radius: 4px;
-    border: 1px solid $brown;
+    border-radius: $brs;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transform-style: preserve-3d;
     transition: 0.3s;
     cursor: pointer;
 
@@ -66,11 +67,17 @@ const _props = defineProps({
 
     &-images {
         margin-top: 16px;
-        height: auto;
+        // height: auto;
         min-height: 200px;
         display: grid;
         place-items: center;
         border: 1px solid #ccc;
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
     }
 }
 </style>

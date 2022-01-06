@@ -39,7 +39,7 @@ function onInput (e: any) {
     align-items: center;
 
     border: 1px solid $brown-dark;
-    border-radius: 10px;
+    border-radius: $brs;
     color: $brown-dark;
 
     &-icon {

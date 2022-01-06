@@ -8,7 +8,8 @@ export const data = [
             {
                 name: 'Bolo de Cenoura',
                 description: 'lorem ipsum',
-                price: 'R$ 0,00'
+                price: 'R$ 0,00',
+                imageUrl: 'https://imagem.band.com.br/novahome/055caa6d-7528-44bc-ac32-3add84bdc0b0.jpg',
             }
         ]
     },
@@ -18,7 +19,8 @@ export const data = [
             {
                 name: 'Pão de Mel Grande',
                 description: '',
-                price: 'R$ 5,00'
+                price: 'R$ 5,00',
+                imageUrl: 'https://www.arcor.com.br/wp-content/uploads/2021/01/pao-de-mel-receita.png',
             }
         ]
     },
