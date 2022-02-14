@@ -8,7 +8,6 @@
     "build": "nuxi build",
     "start": "node .output/server/index.mjs"
   },
-  "dependencies": {},
   "devDependencies": {
     "nuxt3": "latest",
     "sass": "^1.45.0",
