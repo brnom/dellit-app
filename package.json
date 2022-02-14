@@ -1,5 +1,6 @@
 {
-  "private": true,
+  "name": "dellit-app",
+  "packageManager": "yarn@3.1.1",
   "scripts": {
     "dev": "nuxi dev",
     "dev:watch": "npx nodemon --exec yarn dev --ext scss",
