@@ -29,8 +29,7 @@ export default defineNuxtConfig({
             { rel: 'icon', href: '/favicon.png', type: 'image/png' },
             { rel: "preconnect", href: "https://fonts.googleapis.com" },
             { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: true },
-            { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap" },
-            { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" }
+            { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600;700&display=swap" },
         ],
     },
 

@@ -26,8 +26,9 @@ const categories = computed(() =>
     flex-direction: column;
 
     &-pages {
-        margin-top: $navbar-height;
         width: 100%;
+        min-height: calc(100vh - $navbar-height);
+        margin-top: $navbar-height;
         background: #efefef;
         padding: 30px 40px;
     }

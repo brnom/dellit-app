@@ -51,6 +51,7 @@ function onInput (e: any) {
         outline: none;
         width: 100%;
         padding: 4px;
+        background: transparent;
 
         &::placeholder {
             font-style: italic;

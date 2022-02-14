@@ -1,3 +1,16 @@
+<script lang="ts">
+// @ts-ignore
+// import ClickOutside from 'vue-click-outside'
+export default defineComponent({
+    // directives: { ClickOutside },
+    mounted() {
+        // console.log('mounted navbar', {
+        //     ClickOutside
+        // }) 
+    }
+})
+</script>
+
 <script lang="ts" setup>
 // import { PropType } from "vue"
 const route = useRoute()
@@ -7,10 +20,12 @@ const props = defineProps({
     categories: { type: Array, default: () => ([]) },
 })
 
-
 const showCategories = ref(false)
 function isActive (path: string) {
     return route.path === path
+}
+const hideCategories = () => {
+    console.log('called')
 }
 </script>
 
@@ -20,24 +35,31 @@ function isActive (path: string) {
             <img src="/h-logo.png" alt="Dellit Logo">
         </NuxtLink>
 
-        <div class="navbar-categories" @click.stop="showCategories = !showCategories">
-            <div class="navbar-categories-btn">
-                Categorias
-                {{ showCategories ? '-' : '+' }}
-            </div>
+        <div class="--center">
+            <div class="navbar-categories" @click.stop="showCategories = !showCategories">
+                <div class="navbar-categories-btn">
+                    Categorias
+                    {{ showCategories ? '-' : '+' }}
+                </div>
 
-            <div v-if="showCategories" class="navbar-list" @click.stop>
-                <NuxtLink
-                    v-for="category in props.categories"
-                    :key="category.name"
-                    :to="category.path"
-                    :class="['navbar-list-item', isActive(category.path) && '--is-active']"
-                    @click="showCategories = false"
-                >
-                    {{ category.name }}
-                </NuxtLink>
+                <div v-click-outside="hideCategories" v-if="showCategories" class="navbar-list">
+                    <NuxtLink
+                        v-for="category in props.categories"
+                        :key="category.name"
+                        :to="category.path"
+                        :class="['navbar-list-item', isActive(category.path) && '--is-active']"
+                        @click="showCategories = false"
+                    >
+                        {{ category.name }}
+                    </NuxtLink>
+                </div>
             </div>
         </div>
+
+
+        <NuxtLink class="navbar-photos" to="#">
+            Fotos
+        </NuxtLink>
 
         <div class="--right">
             <div class="navbar-message">
@@ -67,9 +89,9 @@ function isActive (path: string) {
     gap: 30px;
 
     background: #f3d6b4;
-    background: #c36b07;
+    background: #e79538;
+    background: #e9765f;
     color: $brown-dark;
-    color: $white;
     font-weight: 600;
     font-size: 20px;
     box-shadow: 0 10px 12px rgba(0, 0, 0, 0.1);
