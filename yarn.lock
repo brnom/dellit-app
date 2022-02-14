@@ -2572,6 +2572,7 @@ __metadata:
     nuxt3: latest
     sass: ^1.45.0
     vite-svg-loader: ^3.1.1
+    vue-click-outside: ^1.1.0
   languageName: unknown
   linkType: soft
 
@@ -7538,6 +7539,13 @@ nuxt3@latest:
   dependencies:
     bundle-runner: ^0.0.1
   checksum: f429bc6493783f2f723f0e6e42251d295e09803e73bcf8c0e790382bf1d563c314b1d9c71924d62e2bb3ad4b334e7b1c9add3d7e0c2dc0e39617380962b8a421
+  languageName: node
+  linkType: hard
+
+"vue-click-outside@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "vue-click-outside@npm:1.1.0"
+  checksum: 69f559e914d189211d8c8cb9a14854d2e888bb587955ab948cf37f5b33751122b888410fddaf958ba03f1b6dcf23d003c63e30ecf6e5fca43d3d3b5fbc148e73
   languageName: node
   linkType: hard
 
