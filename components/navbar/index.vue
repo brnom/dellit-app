@@ -6,7 +6,7 @@ export default defineComponent({
     mounted() {
         // console.log('mounted navbar', {
         //     ClickOutside
-        // }) 
+        // })
     }
 })
 </script>
@@ -55,7 +55,6 @@ const hideCategories = () => {
                 </div>
             </div>
         </div>
-
 
         <NuxtLink class="navbar-photos" to="#">
             Fotos

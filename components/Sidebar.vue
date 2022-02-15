@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { PropType } from "vue"
+import { PropType } from 'vue'
 import { slugify } from '@/helpers/utils'
 
-const _props = defineProps({
+const props = defineProps({
     list: { type: Array as PropType<string[]>, default: () => ([]) },
 })
 

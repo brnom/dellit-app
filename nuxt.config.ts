@@ -1,15 +1,15 @@
 import { defineNuxtConfig } from 'nuxt3'
 import fs from 'fs'
 import svgLoader from 'vite-svg-loader'
+import eslintPlugin from 'vite-plugin-eslint'
 
 /* TODO: fix on vite style-resources support */
 let sassVars = ''
 try {
-  sassVars = fs.readFileSync('./assets/variables.scss', 'utf8')
+    sassVars = fs.readFileSync('./assets/variables.scss', 'utf8')
 } catch (err) {
-  console.error(err)
+    console.error(err)
 }
-
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
@@ -17,6 +17,10 @@ export default defineNuxtConfig({
         '@': '~',
         '@icons': '~/public/icons',
     },
+
+    buildModules: [
+        '@nuxtjs/eslint-module',
+    ],
 
     css: [
         '@/assets/main.scss',
@@ -27,9 +31,9 @@ export default defineNuxtConfig({
         title: 'Dellit Doces',
         link: [
             { rel: 'icon', href: '/favicon.png', type: 'image/png' },
-            { rel: "preconnect", href: "https://fonts.googleapis.com" },
-            { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: true },
-            { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600;700&display=swap" },
+            { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+            { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true },
+            { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600;700&display=swap' },
         ],
     },
 
@@ -48,11 +52,13 @@ export default defineNuxtConfig({
         css: {
             preprocessorOptions: {
                 scss: {
-                    // sourceMap: true,
                     additionalData: sassVars,
                 },
             },
         },
-        plugins: [svgLoader()],
+        plugins: [
+            svgLoader(),
+            eslintPlugin(),
+        ],
     },
 })

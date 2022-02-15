@@ -30,7 +30,7 @@ const icon = computed(() =>
 
 <template>
     <div class="icon">
-        <component :is="icon" :style="style" />   
+        <component :is="icon" :style="style" />
     </div>
 </template>
 
