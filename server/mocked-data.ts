@@ -10,8 +10,8 @@ export const data = [
                 description: 'lorem ipsum',
                 price: 'R$ 0,00',
                 imageUrl: 'https://imagem.band.com.br/novahome/055caa6d-7528-44bc-ac32-3add84bdc0b0.jpg',
-            }
-        ]
+            },
+        ],
     },
     {
         category: 'Pão de Mel',
@@ -21,8 +21,8 @@ export const data = [
                 description: '',
                 price: 'R$ 5,00',
                 imageUrl: 'https://www.arcor.com.br/wp-content/uploads/2021/01/pao-de-mel-receita.png',
-            }
-        ]
+            },
+        ],
     },
     {
         category: 'Docinhos',
@@ -30,9 +30,9 @@ export const data = [
             {
                 name: 'Brigadeiro',
                 description: '',
-                price: 'R$ 0,00'
-            }
-        ]
+                price: 'R$ 0,00',
+            },
+        ],
     },
     {
         category: 'Sobremesas',
@@ -40,9 +40,9 @@ export const data = [
             {
                 name: 'Pudim de Leite',
                 description: '',
-                price: 'R$ 0,00'
-            }
-        ]
+                price: 'R$ 0,00',
+            },
+        ],
     },
     {
         category: 'Páscoa',
@@ -50,9 +50,9 @@ export const data = [
             {
                 name: 'Ovo de Colher',
                 description: '',
-                price: 'R$ 0,00'
-            }
-        ]
+                price: 'R$ 0,00',
+            },
+        ],
     },
     {
         category: 'Natal',
@@ -60,9 +60,9 @@ export const data = [
             {
                 name: 'Panetone',
                 description: '',
-                price: 'R$ 0,00'
-            }
-        ]
+                price: 'R$ 0,00',
+            },
+        ],
     },
     {
         category: 'Chocolates',
@@ -70,8 +70,8 @@ export const data = [
             {
                 name: 'Trufas',
                 description: '',
-                price: 'R$ 0,00'
-            }
-        ]
+                price: 'R$ 0,00',
+            },
+        ],
     },
 ]

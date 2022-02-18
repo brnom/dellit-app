@@ -6,13 +6,15 @@ function onSearchInput (search: string) {
 }
 
 const productsData = computed(() =>
-    data.map(({products }) => products).flat())
+    data.map(({ products }) => products).flat())
 </script>
 
 <template>
     <div class="home-page">
         <header>
-            <h1 class="page-title"> Cardápio </h1>
+            <h1 class="page-title">
+                Cardápio
+            </h1>
 
             <Search @input="onSearchInput" />
         </header>

@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 const props = defineProps({
-    placeholder: { type: String, default: 'Buscar produtos' }
+    placeholder: { type: String, default: 'Buscar produtos' },
 })
 
 const emit = defineEmits<{
-    (event: 'input', search: string): void
+    (_event: 'input', _search: string): void
 }>()
 
 const search = ref('')
@@ -21,9 +21,9 @@ function onInput (e: any) {
         </div>
 
         <input
+            v-model="search"
             type="text"
             :placeholder="props.placeholder"
-            v-model="search"
             @input="onInput"
         >
     </div>

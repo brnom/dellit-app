@@ -8,7 +8,7 @@ const icons: Record<string, any> = {
     search: SearchIcon,
     whatsapp: WhatsappIcon,
     instagram: InstagramIcon,
-    facebook: FacebookIcon
+    facebook: FacebookIcon,
 }
 
 const props = defineProps({
@@ -18,7 +18,7 @@ const props = defineProps({
 
 const style = computed(() => ({
     width: `${props.size}px`,
-    height: `${props.size}px`
+    height: `${props.size}px`,
 }))
 
 const icon = computed(() =>

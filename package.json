@@ -13,6 +13,7 @@
     "vue-click-outside": "^1.1.0"
   },
   "devDependencies": {
+    "@nuxtjs/eslint-module": "^3.0.2",
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
     "eslint": "^8.9.0",

@@ -8,7 +8,7 @@ const currentCategory = computed(() => typeof route.params.name === 'string'
     : route.params.name
 )
 
-const categoryProducts = computed(() =>  {
+const categoryProducts = computed(() => {
     const categoryData = data.find(({ category }) =>
         category.toLowerCase() === currentCategory.value)
     return categoryData?.products ?? []
@@ -23,7 +23,10 @@ const categoryProducts = computed(() =>  {
             </h1>
         </header>
 
-        <div v-if="categoryProducts.length" class="ctgp-products">
+        <div
+            v-if="categoryProducts.length"
+            class="ctgp-products"
+        >
             <ProductCard
                 v-for="(product, idx) in categoryProducts"
                 :key="idx + product.name"

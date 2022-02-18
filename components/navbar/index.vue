@@ -1,22 +1,8 @@
-<script lang="ts">
-// @ts-ignore
-// import ClickOutside from 'vue-click-outside'
-export default defineComponent({
-    // directives: { ClickOutside },
-    mounted() {
-        // console.log('mounted navbar', {
-        //     ClickOutside
-        // })
-    }
-})
-</script>
-
 <script lang="ts" setup>
 // import { PropType } from "vue"
 const route = useRoute()
 
 const props = defineProps({
-    // categories: { type: Array as PropType<any[]>, default: () => ([]) },
     categories: { type: Array, default: () => ([]) },
 })
 
@@ -30,19 +16,25 @@ const hideCategories = () => {
 </script>
 
 <template>
-    <nav class="navbar" @click="showCategories = false">
+    <nav
+        class="navbar"
+        @click="showCategories = false"
+    >
         <NuxtLink class="navbar-logo" to="/">
             <img src="/h-logo.png" alt="Dellit Logo">
         </NuxtLink>
 
         <div class="--center">
-            <div class="navbar-categories" @click.stop="showCategories = !showCategories">
+            <div
+                class="navbar-categories"
+                @click.stop="showCategories = !showCategories"
+            >
                 <div class="navbar-categories-btn">
                     Categorias
                     {{ showCategories ? '-' : '+' }}
                 </div>
 
-                <div v-click-outside="hideCategories" v-if="showCategories" class="navbar-list">
+                <div v-if="showCategories" class="navbar-list">
                     <NuxtLink
                         v-for="category in props.categories"
                         :key="category.name"
