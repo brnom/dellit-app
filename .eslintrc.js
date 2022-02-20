@@ -34,5 +34,12 @@ module.exports = {
 
         'vue/html-indent': ['error', 4],
         'vue/max-attributes-per-line': ['error', { 'singleline': 4 }],
+    },
+    globals: {
+        ref: 'readonly',
+        computed: 'readonly',
+        defineProps: 'readonly',
+        defineEmits: 'readonly',
+        useRoute: 'readonly',
     }
 }
